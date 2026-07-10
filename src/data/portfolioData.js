@@ -93,8 +93,8 @@ export const portfolioData = {
       description: "Un sistema de gestión para restaurantes con funcionalidades de reserva, gestión de menú y control de inventario.",
       skillsLearned: ["Desarrollo de aplicaciones web con React", "Integración de APIs RESTful", "React-Native", "Diseño responsivo con Tailwind CSS"],
       repoUrl: "https://github.com/ecujcuj-2024028/Restaurant-Management-System.git",
-      demoUrl: "https://restaurant-management-demo.netlify.app",
-      displayed: false,
+      demoUrl: "https://restaurant-management-system-fronte-psi.vercel.app/login",
+      displayed: true,
       images: {
         ui1: "https://res.cloudinary.com/dscti2jte/image/upload/v1782596181/Captura_de_pantalla_2026-06-27_153314_m6lo1w.png",
         ui2: "https://res.cloudinary.com/dscti2jte/image/upload/v1782596181/Captura_de_pantalla_2026-06-27_153327_ssaain.png",
