@@ -5,18 +5,18 @@ import { Button } from '../common/Button';
 import { portfolioData } from '../../data/portfolioData';
 import { Terminal, ArrowDown, User } from 'lucide-react';
 
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const Hero = () => {
   const { personalInfo } = portfolioData;
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <Section id="welcome" className="min-h-screen flex items-center justify-center pt-24 sm:pt-32">
+    <Section id="welcome" className="min-h-dvh flex items-center justify-center pt-24 sm:pt-32">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
 
         {/* Columna Izquierda: Información Principal */}
@@ -63,7 +63,7 @@ const Hero = () => {
         </div>
 
         {/* Columna Derecha: Tarjeta de Terminal Interactiva */}
-        <div className="aura aura-dual lg:col-span-5 hidden lg:block">
+        <div className="lg:col-span-5 hidden lg:block">
           <div className="card bg-base-100">
             <div className="relative group select-none">
 
@@ -98,14 +98,13 @@ const Hero = () => {
           </div>
         </div>
 
-
       </div>
 
       {/* Indicador de desplazamiento inferior */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300" onClick={() => scrollToSection('about')}>
+      <button type="button" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer opacity-70 hover:opacity-100 transition-opacity duration-300 bg-transparent border-0" onClick={() => scrollToSection('about')}>
         <span className="font-mono text-[9px] uppercase tracking-widest text-slate-500">Desplazarse</span>
-        <ArrowDown size={14} className="text-cyber-emerald animate-bounce" />
-      </div>
+        <ArrowDown size={14} className="text-cyber-emerald animate-pulse" />
+      </button>
     </Section>
   );
 };

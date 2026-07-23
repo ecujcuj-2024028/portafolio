@@ -114,6 +114,7 @@ const Navbar = () => {
 
             return (
               <button
+                type="button"
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`relative p-2.5 sm:p-3 rounded-full transition-all duration-300 group cursor-pointer ${isActive ? 'text-cyber-emerald scale-110' : 'text-slate-400 hover:text-slate-200'}`}

@@ -13,7 +13,7 @@ function App() {
   const [isIntroComplete, setIsIntroComplete] = useState(false);
 
   return (
-    <div className="relative min-h-screen w-full selection:bg-cyber-violet/30 selection:text-white">
+    <div className="relative min-h-dvh w-full selection:bg-cyber-violet/30 selection:text-white">
       {/* Pantalla de Carga / Intro */}
       {!isIntroComplete && (
         <SplashScreen onComplete={() => setIsIntroComplete(true)} />

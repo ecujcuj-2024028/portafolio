@@ -36,7 +36,8 @@ const Projects = () => {
               const isSelected = activeProjectIdx === idx;
 
               return (
-                <div
+                <button
+                  type="button"
                   key={project.id}
                   onClick={() => {
                     setActiveProjectIdx(idx);
@@ -54,7 +55,7 @@ const Projects = () => {
                   <p className="font-sans text-xs text-slate-400 font-light mt-1.5 line-clamp-2">
                     {project.description}
                   </p>
-                </div>
+                </button>
               );
             })}
           </div>
@@ -83,12 +84,14 @@ const Projects = () => {
               {/* Selector de Vista: Web / Móvil */}
               <div className="flex gap-1.5 bg-bg-dark/80 p-1 border border-slate-800/80 rounded-md">
                 <button
+                  type="button"
                   onClick={() => setViewMode('web')}
                   className={`font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded cursor-pointer flex items-center gap-1.5 transition-all duration-300 ${viewMode === 'web' ? 'bg-cyber-violet/20 text-slate-100 border border-cyber-violet/30' : 'text-slate-400 hover:text-slate-200 border border-transparent'}`}
                 >
                   Web
                 </button>
                 <button
+                  type="button"
                   onClick={() => setViewMode('mobile')}
                   className={`font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded cursor-pointer flex items-center gap-1.5 transition-all duration-300 ${viewMode === 'mobile' ? 'bg-cyber-violet/20 text-slate-100 border border-cyber-violet/30' : 'text-slate-400 hover:text-slate-200 border border-transparent'}`}
                 >
@@ -105,8 +108,9 @@ const Projects = () => {
                   /* VISTA WEB */
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Imagen 1 */}
-                    <div
-                      className="mockup-browser border border-slate-800 bg-slate-950/40 w-full cursor-zoom-in group transition-all duration-300 hover:border-slate-700/80"
+                    <button
+                      type="button"
+                      className="mockup-browser border border-slate-800 bg-slate-950/40 w-full cursor-zoom-in group transition-colors duration-300 hover:border-slate-700/80 text-left"
                       onClick={() => openPreview(activeProject.images.ui1)}
                     >
                       <div className="mockup-browser-toolbar">
@@ -121,11 +125,12 @@ const Projects = () => {
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
                         />
                       </div>
-                    </div>
+                    </button>
 
                     {/* Imagen 2 */}
-                    <div
-                      className="mockup-browser border border-slate-800 bg-slate-950/40 w-full cursor-zoom-in group transition-all duration-300 hover:border-slate-700/80"
+                    <button
+                      type="button"
+                      className="mockup-browser border border-slate-800 bg-slate-950/40 w-full cursor-zoom-in group transition-colors duration-300 hover:border-slate-700/80 text-left"
                       onClick={() => openPreview(activeProject.images.ui2)}
                     >
                       <div className="mockup-browser-toolbar">
@@ -140,13 +145,14 @@ const Projects = () => {
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
                         />
                       </div>
-                    </div>
+                    </button>
                   </div>
                 ) : (
                   /* VISTA MÓVIL (Imagen 3 en Mockup Vertical) */
                   <div className="flex justify-center items-center py-2">
-                    <div
-                      className="mockup-phone border-slate-900 shadow-2xl max-w-[220px] w-full cursor-zoom-in group shrink-0 !rounded-3xl"
+                    <button
+                      type="button"
+                      className="mockup-phone border-slate-900 shadow-2xl max-w-[220px] w-full cursor-zoom-in group shrink-0 !rounded-3xl text-left bg-transparent p-0 border-0"
                       onClick={() => openPreview(activeProject.images.ui3)}
                     >
                       <div className="mockup-phone-camera"></div>
@@ -166,7 +172,7 @@ const Projects = () => {
                           )}
                         </div>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 )}
 
@@ -190,9 +196,9 @@ const Projects = () => {
                     <BookOpen size={10} /> Habilidades Aprendidas
                   </span>
                   <div className="flex flex-wrap gap-2">
-                    {activeProject.skillsLearned.map((skill, index) => (
+                    {activeProject.skillsLearned.map((skill) => (
                       <span
-                        key={index}
+                        key={skill}
                         className="font-mono text-[10px] text-slate-300 bg-bg-dark border border-slate-900 rounded px-2.5 py-1"
                       >
                         {skill}
@@ -233,8 +239,8 @@ const Projects = () => {
       </div>
 
       {previewImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 p-4" onClick={closePreview}>
-          <div className="relative max-w-5xl w-full">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 p-4" onClick={closePreview} role="presentation">
+          <div className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
             <img
               src={previewImage}
               alt={`Vista amplia de ${activeProject.title}`}
@@ -243,10 +249,7 @@ const Projects = () => {
             <button
               type="button"
               className="absolute top-3 right-3 rounded-full bg-slate-900/90 px-3 py-2 text-xs font-medium text-slate-100 hover:bg-slate-800"
-              onClick={(e) => {
-                e.stopPropagation();
-                closePreview();
-              }}
+              onClick={closePreview}
             >
               Cerrar
             </button>

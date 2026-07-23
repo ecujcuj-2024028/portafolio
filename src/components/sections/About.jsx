@@ -5,6 +5,12 @@ import { Card } from '../common/Card';
 import { portfolioData } from '../../data/portfolioData';
 import { User, Mail, MapPin, Calendar, Award, BookOpen, ChevronRight } from 'lucide-react';
 
+const GOALS = [
+  "Diseñar interfaces no convencionales que sorprendan al usuario.",
+  "Crear un Backend robusto y escalable.",
+  "Colaborar en proyectos tecnológicos innovadores.",
+];
+
 const About = () => {
   const { personalInfo } = portfolioData;
 
@@ -16,12 +22,6 @@ const About = () => {
     { label: "Experiencia", value: personalInfo.yearsCoding, icon: Award },
     { label: "Formación", value: personalInfo.currentFocus, icon: BookOpen },
     { label: "Contacto", value: personalInfo.phone, icon: Calendar },
-  ];
-
-  const goals = [
-    "Diseñar interfaces no convencionales que sorprendan al usuario.",
-    "Crear un Backend robusto y escalable.",
-    "Colaborar en proyectos tecnológicos innovadores.",
   ];
 
   return (
@@ -57,8 +57,8 @@ const About = () => {
               // METAS Y ASPIRACIONES
             </h4>
             <ul className="space-y-3.5">
-              {goals.map((goal, index) => (
-                <li key={index} className="flex items-start gap-2.5">
+              {GOALS.map((goal) => (
+                <li key={goal} className="flex items-start gap-2.5">
                   <span className="mt-1.5 flex h-1.5 w-1.5 shrink-0 rounded-full bg-cyber-emerald" />
                   <span className="font-sans text-sm text-slate-300 font-light leading-relaxed">
                     {goal}
@@ -78,12 +78,12 @@ const About = () => {
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {generalSpecs.map((spec, index) => {
+                {generalSpecs.map((spec) => {
                   const Icon = spec.icon;
                   return (
                     <div
-                      key={index}
-                      className="bg-bg-dark/65 border border-slate-900/80 rounded-lg p-4 flex flex-col gap-2.5 transition-all duration-300 hover:border-cyber-violet/20 hover:bg-bg-dark/90 group"
+                      key={spec.label}
+                      className="bg-bg-dark/65 border border-slate-900/80 rounded-lg p-4 flex flex-col gap-2.5 transition-colors duration-300 hover:border-cyber-violet/20 hover:bg-bg-dark/90 group"
                     >
                       <div className="flex items-center gap-2">
                         <Icon size={14} className="text-cyber-violet group-hover:text-cyber-emerald transition-colors duration-300" />
@@ -110,10 +110,13 @@ const About = () => {
                 </span>
               </div>
               <a
-                href="#contact"
+                href={personalInfo.cv || '/CV.pdf'}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
                 className="font-mono text-xs text-cyber-violet hover:text-cyber-emerald flex items-center gap-1 uppercase tracking-wider transition-colors duration-300"
               >
-                Solicitar CV Completo
+                Descargar CV Completo
                 <ChevronRight size={14} />
               </a>
             </div>

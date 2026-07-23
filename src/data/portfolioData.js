@@ -14,6 +14,7 @@ export const portfolioData = {
     location: "Guatemala",
     github: "https://github.com/ecujcuj-2024028",
     linkedin: "https://www.linkedin.com/in/edvin-leonel-cujcuj-ejcalón-42852241a/",
+    cv: "/CV.pdf",
     computrabajo: "https://computrabajo.com",
     yearsCoding: "2+ Años Aprendiendo y Creando",
     currentFocus: "Perfeccionando arquitecturas React/Next.js y micro-interacciones avanzadas en CSS."

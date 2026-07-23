@@ -44,6 +44,7 @@ const Skills = () => {
           {/* Controles de Categoría (Pestañas) */}
           <div className="flex flex-wrap gap-2 p-1.5 bg-slate-950/65 border border-slate-900 rounded-lg w-fit">
             <button
+              type="button"
               onClick={() => setActiveCategory('all')}
               className={`font-mono text-xs uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-300 cursor-pointer ${activeCategory === 'all' ? 'bg-cyber-violet/25 text-slate-100 border border-cyber-violet/40 shadow-sm' : 'text-slate-400 hover:text-slate-200 border border-transparent'}`}
             >
@@ -51,6 +52,7 @@ const Skills = () => {
             </button>
             {categories.map((cat) => (
               <button
+                type="button"
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 className={`font-mono text-xs uppercase tracking-wider px-4 py-2 rounded-md transition-all duration-300 cursor-pointer ${activeCategory === cat.id ? 'bg-cyber-violet/25 text-slate-100 border border-cyber-violet/40 shadow-sm' : 'text-slate-400 hover:text-slate-200 border border-transparent'}`}
@@ -62,12 +64,13 @@ const Skills = () => {
 
           {/* Grilla de habilidades filtradas (Sleek Tech Badges Grid) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
-            {getFilteredSkills().map((skill, index) => {
+            {getFilteredSkills().map((skill) => {
               const isSelected = selectedSkill.name === skill.name;
 
               return (
-                <div
-                  key={index}
+                <button
+                  type="button"
+                  key={skill.name}
                   onClick={() => setSelectedSkill(skill)}
                   className={`bg-slate-950/45 border rounded-xl p-4 cursor-pointer transition-all duration-300 select-none flex flex-col justify-center items-center text-center relative overflow-hidden group min-h-[90px] ${isSelected ? 'border-cyber-emerald bg-slate-950/90 shadow-[0_0_20px_rgba(16,185,129,0.12)] scale-[1.02]' : 'border-slate-900/60 hover:border-slate-800/80 hover:bg-slate-950/60 hover:scale-[1.01]'}`}
                 >
@@ -83,7 +86,7 @@ const Skills = () => {
                   <span className="font-mono text-[8px] text-slate-500 uppercase tracking-widest mt-2 block">
                     {isSelected ? "[ Seleccionado ]" : "[ Ver Info ]"}
                   </span>
-                </div>
+                </button>
               );
             })}
           </div>

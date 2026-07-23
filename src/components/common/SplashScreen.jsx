@@ -37,8 +37,8 @@ const SplashScreen = ({ onComplete }) => {
       triggerExit();
     };
 
-    window.addEventListener('wheel', handleWheel);
-    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('wheel', handleWheel, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
 
     return () => {
       window.removeEventListener('wheel', handleWheel);
@@ -79,7 +79,7 @@ const SplashScreen = ({ onComplete }) => {
         <span className="font-mono text-[9px] text-slate-400 uppercase tracking-widest animate-pulse">
           Desplázate hacia abajo para ingresar
         </span>
-        <ArrowDown size={16} className="text-cyber-emerald animate-bounce mt-1" />
+        <ArrowDown size={16} className="text-cyber-emerald animate-pulse mt-1" />
       </div>
     </div>
   );

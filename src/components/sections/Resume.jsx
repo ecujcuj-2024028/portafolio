@@ -29,8 +29,8 @@ const Resume = () => {
           </div>
 
           <div className="relative border-l border-slate-800/80 ml-4 pl-6 sm:pl-8 space-y-10">
-            {education.map((item, index) => (
-              <div key={index} className="relative group">
+            {education.map((item) => (
+              <div key={item.title} className="relative group">
                 
                 {/* Nodo de la línea de tiempo */}
                 <span className="absolute -left-[31px] sm:-left-[39px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-slate-950 border-2 border-cyber-violet group-hover:border-cyber-emerald transition-colors duration-300">
@@ -73,8 +73,8 @@ const Resume = () => {
           </div>
 
           <div className="relative border-l border-slate-800/80 ml-4 pl-6 sm:pl-8 space-y-10">
-            {experience.map((item, index) => (
-              <div key={index} className="relative group">
+            {experience.map((item) => (
+              <div key={`${item.company}-${item.title}`} className="relative group">
                 
                 {/* Nodo de la línea de tiempo */}
                 <span className="absolute -left-[31px] sm:-left-[39px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-slate-950 border-2 border-cyber-emerald group-hover:border-cyber-violet transition-colors duration-300">
