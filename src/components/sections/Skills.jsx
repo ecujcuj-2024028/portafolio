@@ -3,7 +3,7 @@ import Section from '../common/Section';
 import { SectionHeader, Paragraph } from '../common/Typography';
 import { Card } from '../common/Card';
 import { portfolioData } from '../../data/portfolioData';
-import { Terminal, CheckCircle2, Gamepad2, Zap, Trophy, Shield } from 'lucide-react';
+import { Cpu, CheckCircle2, Zap, Shield } from 'lucide-react';
 
 const getLevelInfo = (level) => {
   switch (level) {
@@ -84,8 +84,8 @@ const Skills = () => {
       {/* Encabezado */}
       <SectionHeader
         num="02"
-        title="Habilidades & Nivel Gamer"
-        subtitle="MATRIZ DE PROGRESO & STATS DE DOMINIO"
+        title="Habilidades & Nivel"
+        subtitle="MATRIZ DE TECNOLOGÍAS & NIVEL DE DOMINIO"
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-stretch">
@@ -155,19 +155,19 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Lado Derecho: Monitor HUD Gamer de Habilidad Seleccionada */}
+        {/* Lado Derecho: Monitor de Habilidad Seleccionada */}
         <div className="lg:col-span-5 flex">
           <Card className="w-full border-slate-800/50 flex flex-col justify-between relative overflow-hidden">
             {/* Orbe decorativo de fondo */}
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-cyber-violet/5 rounded-full blur-2xl pointer-events-none" />
 
             <div className="space-y-6 relative z-10">
-              {/* Encabezado del monitor HUD */}
+              {/* Encabezado del monitor */}
               <div className="flex items-center justify-between border-b border-slate-900 pb-4">
                 <div className="flex items-center gap-2">
-                  <Gamepad2 size={16} className="text-cyber-violet" />
+                  <Cpu size={16} className="text-cyber-violet" />
                   <span className="font-mono text-xs text-slate-400 uppercase tracking-widest font-semibold">
-                    HUD // TELEMETRÍA GAMER
+                    NIVEL DE HABILIDAD
                   </span>
                 </div>
                 <span className={`font-mono text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md border ${currentLevelInfo.badgeBg}`}>
