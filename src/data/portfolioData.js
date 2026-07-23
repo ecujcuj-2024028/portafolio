@@ -26,10 +26,10 @@ export const portfolioData = {
         title: "Frontend Core",
         items: [
           { name: "React.js", level: "Alto", progress: 80 },
-          { name: "JavaScript / ES6+", level: "Alto", progress: 85 },
-          { name: "HTML5", level: "Experto", progress: 90 },
-          { name: "CSS3", level: "Alto", progress: 90 },
-          { name: "Tailwind CSS v4", level: "Alto", progress: 85 }
+          { name: "JavaScript / ES6+", level: "Alto", progress: 80 },
+          { name: "HTML5", level: "Experto", progress: 85 },
+          { name: "CSS3", level: "Alto", progress: 80 },
+          { name: "Tailwind CSS v4", level: "Alto", progress: 80 }
         ]
       },
       {
@@ -39,9 +39,9 @@ export const portfolioData = {
           { name: "Node.js / Express", level: "Alto", progress: 85 },
           { name: "SQL (MySQL/PostgreSQL)", level: "Medio", progress: 70 },
           { name: "MongoDB", level: "Medio", progress: 70 },
-          { name: "Java / Spring Boot", level: "Medio", progress: 60 },
+          { name: "Java / Spring Boot", level: "Medio", progress: 50 },
           { name: "C# / .Net", level: "Medio", progress: 65 },
-          { name: "Docker & Contenedores", level: "Bajo", progress: 80 }
+          { name: "Docker & Contenedores", level: "Medio", progress: 80 }
         ]
       },
       {

@@ -13,6 +13,7 @@ const getLevelInfo = (level) => {
         shortLabel: 'EXPERTO',
         blocks: 4,
         colorText: 'text-amber-400',
+        colorBg: 'bg-amber-400',
         badgeBg: 'bg-amber-500/10 border-amber-500/30 text-amber-300',
         barGradient: 'from-amber-500 via-emerald-400 to-emerald-300',
         shadowColor: 'shadow-amber-500/20',
@@ -23,6 +24,7 @@ const getLevelInfo = (level) => {
         shortLabel: 'ALTO',
         blocks: 3,
         colorText: 'text-cyber-emerald',
+        colorBg: 'bg-cyber-emerald',
         badgeBg: 'bg-cyber-emerald/10 border-cyber-emerald/30 text-cyber-emerald',
         barGradient: 'from-cyber-emerald to-teal-400',
         shadowColor: 'shadow-cyber-emerald/20',
@@ -33,6 +35,7 @@ const getLevelInfo = (level) => {
         shortLabel: 'MEDIO',
         blocks: 2,
         colorText: 'text-cyber-violet',
+        colorBg: 'bg-cyber-violet',
         badgeBg: 'bg-cyber-violet/10 border-cyber-violet/30 text-cyber-violet',
         barGradient: 'from-cyber-violet to-purple-400',
         shadowColor: 'shadow-cyber-violet/20',
@@ -44,6 +47,7 @@ const getLevelInfo = (level) => {
         shortLabel: 'BAJO',
         blocks: 1,
         colorText: 'text-sky-400',
+        colorBg: 'bg-sky-400',
         badgeBg: 'bg-sky-500/10 border-sky-500/30 text-sky-400',
         barGradient: 'from-sky-500 to-blue-400',
         shadowColor: 'shadow-sky-500/20',
@@ -139,7 +143,7 @@ const Skills = () => {
                         key={blockNum}
                         className={`h-1.5 flex-1 rounded-sm transition-all duration-300 ${
                           blockNum <= skillLevel.blocks
-                            ? `${skillLevel.colorText.replace('text-', 'bg-')} opacity-90 shadow-sm`
+                            ? `${skillLevel.colorBg} opacity-90 shadow-sm`
                             : 'bg-slate-900 border border-slate-800'
                         }`}
                       />
