@@ -165,7 +165,7 @@ const Skills = () => {
               {/* Encabezado del monitor HUD */}
               <div className="flex items-center justify-between border-b border-slate-900 pb-4">
                 <div className="flex items-center gap-2">
-                  <Gamepad2 size={16} className="text-cyber-violet animate-pulse" />
+                  <Gamepad2 size={16} className="text-cyber-violet" />
                   <span className="font-mono text-xs text-slate-400 uppercase tracking-widest font-semibold">
                     HUD // TELEMETRÍA GAMER
                   </span>
