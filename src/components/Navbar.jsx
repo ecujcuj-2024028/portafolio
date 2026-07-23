@@ -71,10 +71,12 @@ const Navbar = () => {
     }
   };
 
+  const showNav = activeSection !== 'welcome' || isScrolled;
+
   return (
     <>
       {/* Navbar Superior  */}
-      <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 px-6 py-4 flex justify-between items-center ${isScrolled ? 'bg-bg-dark/80 backdrop-blur-md border-b border-slate-900/80 shadow-lg' : 'bg-transparent'}`}>
+      <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 px-6 py-4 flex justify-between items-center ${isScrolled ? 'bg-bg-dark/80 backdrop-blur-md border-b border-slate-900/80 shadow-lg' : 'bg-transparent'} ${showNav ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-6 pointer-events-none'}`}>
         <div className="flex items-center gap-2">
           <span className="font-mono text-xs tracking-widest text-slate-400 font-semibold uppercase hidden sm:inline-block">
             // El trabajo bien Hecho
@@ -104,7 +106,7 @@ const Navbar = () => {
       </header>
 
       {/* Menú de Navegación Flotante */}
-      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4">
+      <nav className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 transition-all duration-500 ${showNav ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
         <div className="glass-panel rounded-full px-4 py-2.5 flex items-center gap-2 sm:gap-4 shadow-[0_15px_35px_rgba(0,0,0,0.5)] border-slate-800/60 relative">
 
           {/* Fondo difuso e indicador detrás del elemento activo */}
