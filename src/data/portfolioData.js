@@ -25,36 +25,36 @@ export const portfolioData = {
         id: "frontend",
         title: "Frontend Core",
         items: [
-          { name: "React.js" },
-          { name: "JavaScript / ES6+" },
-          { name: "HTML5" },
-          { name: "CSS3" },
-          { name: "Tailwind CSS v4" }
+          { name: "React.js", level: "Alto", progress: 80 },
+          { name: "JavaScript / ES6+", level: "Alto", progress: 85 },
+          { name: "HTML5", level: "Experto", progress: 90 },
+          { name: "CSS3", level: "Alto", progress: 90 },
+          { name: "Tailwind CSS v4", level: "Alto", progress: 85 }
         ]
       },
       {
         id: "backend",
         title: "Backend & Bases de Datos",
         items: [
-          { name: "Node.js / Express" },
-          { name: "SQL (MySQL/PostgreSQL)" },
-          { name: "MongoDB" },
-          { name: "Java / Spring Boot" },
-          { name: "C# / .Net" },
-          { name: "Docker & Contenedores" }
+          { name: "Node.js / Express", level: "Alto", progress: 85 },
+          { name: "SQL (MySQL/PostgreSQL)", level: "Medio", progress: 70 },
+          { name: "MongoDB", level: "Medio", progress: 70 },
+          { name: "Java / Spring Boot", level: "Medio", progress: 60 },
+          { name: "C# / .Net", level: "Medio", progress: 65 },
+          { name: "Docker & Contenedores", level: "Bajo", progress: 80 }
         ]
       },
       {
         id: "tools",
         title: "Herramientas",
         items: [
-          { name: "Git & GitHub" },
-          { name: "Figma (UI/UX Design)" },
-          { name: "Vite " },
-          { name: "Redux" },
-          { name: "Postman " },
-          { name: "Jira" },
-          { name: "Visual Studio Code" }
+          { name: "Git & GitHub", level: "Alto", progress: 85 },
+          { name: "Figma (UI/UX Design)", level: "Medio", progress: 65 },
+          { name: "Vite", level: "Alto", progress: 80 },
+          { name: "Redux", level: "Medio", progress: 65 },
+          { name: "Postman", level: "Alto", progress: 80 },
+          { name: "Jira", level: "Medio", progress: 60 },
+          { name: "Visual Studio Code", level: "Experto", progress: 95 }
         ]
       }
     ]
