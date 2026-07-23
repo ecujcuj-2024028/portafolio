@@ -121,24 +121,14 @@ const Skills = () => {
                   type="button"
                   key={skill.name}
                   onClick={() => setSelectedSkill(skill)}
-                  className={`bg-slate-950/45 border rounded-xl p-4 cursor-pointer transition-all duration-300 select-none flex flex-col justify-between items-center text-center relative overflow-hidden group min-h-[105px] ${isSelected ? 'border-cyber-emerald bg-slate-950/90 shadow-[0_0_20px_rgba(16,185,129,0.15)] scale-[1.02]' : 'border-slate-900/60 hover:border-slate-800/80 hover:bg-slate-950/60 hover:scale-[1.01]'}`}
+                  className={`bg-slate-950/45 border rounded-xl p-4 cursor-pointer transition-all duration-300 select-none flex flex-col justify-between items-center text-center relative overflow-hidden group min-h-[90px] ${isSelected ? 'border-cyber-emerald bg-slate-950/90 shadow-[0_0_20px_rgba(16,185,129,0.15)] scale-[1.02]' : 'border-slate-900/60 hover:border-slate-800/80 hover:bg-slate-950/60 hover:scale-[1.01]'}`}
                 >
                   {/* Pequeña línea superior de acento al seleccionar */}
                   {isSelected && (
                     <div className="absolute top-0 left-0 w-full h-[2px] bg-cyber-emerald" />
                   )}
 
-                  {/* Badge de Nivel Gamer superior */}
-                  <div className="w-full flex justify-between items-center mb-1">
-                    <span className={`font-mono text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded border ${skillLevel.badgeBg}`}>
-                      {skill.level || 'MEDIO'}
-                    </span>
-                    <span className="font-mono text-[9px] text-slate-500 font-semibold">
-                      {skill.progress || 70}%
-                    </span>
-                  </div>
-
-                  <span className={`font-sans font-bold text-sm sm:text-base my-1 transition-colors duration-300 ${isSelected ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>
+                  <span className={`font-sans font-bold text-sm sm:text-base my-auto transition-colors duration-300 ${isSelected ? 'text-white' : 'text-slate-300 group-hover:text-white'}`}>
                     {skill.name}
                   </span>
 
