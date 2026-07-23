@@ -9,7 +9,7 @@ export const portfolioData = {
     shortBio: "Me especializo en diseñar y construir Software Revolucionario, con un enfoque en la experiencia del usuario y la eficiencia del código. Mi objetivo es crear aplicaciones que no solo sean funcionales, sino también visualmente impactantes y altamente interactivas.",
     detailedBio: "Soy un estudiante con muchas ganas de aprender y crecer en el mundo del desarrollo de Software.",
     status: "Disponible",
-    email: "ecujcuj-2024028@kinal.edu.gt",
+    email: "edvincuej9@gmail.com",
     phone: "+502 33381140",
     location: "Guatemala",
     github: "https://github.com/ecujcuj-2024028",
