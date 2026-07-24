@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Home, User, Cpu, FileText, FolderGit2, Send } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Home, User, Cpu, FileText, FolderGit2, Send, ArrowUp } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 import { GithubIcon, LinkedinIcon } from './common/CustomIcons';
 
@@ -20,9 +20,15 @@ const Navbar = () => {
   useEffect(() => {
     // Detectar scroll para efectos de fondo e indicar la última sección al llegar al final
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrollPos = window.scrollY;
+      setIsScrolled(scrollPos > 50);
       
-      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
+      if (scrollPos < 50) {
+        setActiveSection('welcome');
+        return;
+      }
+      
+      const isAtBottom = window.innerHeight + scrollPos >= document.documentElement.scrollHeight - 80;
       if (isAtBottom) {
         setActiveSection('contact');
       }
@@ -141,6 +147,16 @@ const Navbar = () => {
           })}
         </div>
       </nav>
+
+      {/* Botón de subir al inicio */}
+      <button
+        type="button"
+        onClick={() => scrollToSection('welcome')}
+        className={`fixed bottom-6 right-6 z-40 p-3 rounded-full bg-slate-950/80 border border-slate-800 text-cyber-emerald shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all duration-300 hover:text-white hover:border-cyber-emerald hover:shadow-[0_0_20px_rgba(16,185,129,0.35)] cursor-pointer group focus:outline-none ${isScrolled ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-75 translate-y-4 pointer-events-none'}`}
+        aria-label="Subir al inicio"
+      >
+        <ArrowUp size={18} className="transition-transform duration-300 group-hover:-translate-y-0.5" />
+      </button>
     </>
   );
 };
