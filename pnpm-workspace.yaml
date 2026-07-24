@@ -1,2 +1,5 @@
 minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - 'lightningcss'
+  - 'lightningcss-*'
 trustPolicy: no-downgrade
