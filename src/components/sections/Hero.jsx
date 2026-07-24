@@ -74,7 +74,7 @@ const Hero = () => {
               <button 
                 type="button"
                 onClick={() => setIsFlipped(!isFlipped)}
-                className="w-full aspect-[4/3] sm:aspect-square lg:aspect-[4/3.2] perspective-1000 cursor-pointer group text-left bg-transparent border-0 p-0 focus:outline-none"
+                className="w-full h-[400px] sm:h-[440px] perspective-1000 cursor-pointer group text-left bg-transparent border-0 p-0 focus:outline-none"
               >
                 {/* Rotador de la carta */}
                 <div className={`relative w-full h-full duration-700 transform-style-3d transition-transform ${isFlipped ? 'rotate-y-180' : ''}`}>
@@ -88,20 +88,25 @@ const Hero = () => {
                       </span>
                     </div>
 
-                    {/* Foto central */}
-                    <div className="flex-1 flex items-center justify-center p-2">
-                      <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full p-1 bg-gradient-to-tr from-cyber-violet to-cyber-emerald shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                    {/* Foto central (Retrato de Personaje / Estilo Arcade) */}
+                    <div className="flex-1 flex flex-col items-center justify-center p-2">
+                      <div className="relative w-28 h-28 sm:w-36 sm:h-36 bg-slate-900 border-4 border-slate-950 rounded-full shadow-[4px_4px_0px_#07090e,8px_8px_0px_#fde047] group-hover:translate-x-[-2px] group-hover:translate-y-[-2px] group-hover:shadow-[6px_6px_0px_#07090e,12px_12px_0px_#fde047] transition duration-300 overflow-hidden">
                         <img 
                           src="https://github.com/ecujcuj-2024028.png" 
                           alt="Edvin Leonel Cujcuj" 
-                          className="w-full h-full rounded-full object-cover bg-slate-900"
+                          className="w-full h-full object-cover rounded-full bg-slate-900 contrast-[1.05]"
                         />
                       </div>
-                    </div>
 
-                    {/* Footer de la carta */}
-                    <div className="text-center font-mono text-[9px] text-slate-500 uppercase tracking-widest mt-2">
-                      Edvin Leonel // Desarrollador Full-Stack
+                      {/* Stats retro de juego debajo del retrato */}
+                      <div className="mt-5 flex flex-col items-center gap-0.5 select-none">
+                        <span className="font-mono text-[9px] text-slate-400">
+                          HP [██████████] 99/99
+                        </span>
+                        <span className="font-mono text-[9.5px] text-slate-400 uppercase tracking-widest font-semibold mt-1">
+                          Edvin Leonel // LVL 2+
+                        </span>
+                      </div>
                     </div>
                   </div>
 
@@ -115,7 +120,7 @@ const Hero = () => {
                     </div>
 
                     {/* Contenido en formato de objeto de código */}
-                    <div className="p-4 sm:p-6 font-mono text-[10px] sm:text-xs text-slate-300 space-y-1.5 overflow-x-auto leading-relaxed flex-1 flex flex-col justify-center">
+                    <div className="p-4 sm:p-6 font-mono text-[9px] sm:text-xs text-slate-300 space-y-1 sm:space-y-1.5 leading-normal flex-1 flex flex-col justify-center overflow-hidden">
                       <p className="text-slate-500">// Propiedades del Desarrollador</p>
                       <p><span className="text-violet-400">const</span> <span className="text-sky-400">developer</span> = &#123;</p>
                       <p className="pl-4"><span className="text-emerald-400">nombre</span>: <span className="text-yellow-200">"{personalInfo.firstName}"</span>,</p>
@@ -137,7 +142,7 @@ const Hero = () => {
 
               {/* Indicador de acción (Clic para girar) */}
               <span className="font-mono text-[9px] uppercase tracking-widest text-slate-500 animate-pulse mt-1 select-none">
-                💡 haz clic en la tarjeta para {isFlipped ? 'ver foto' : 'ver terminal'}
+                haz clic en la tarjeta para {isFlipped ? 'ver foto' : 'ver terminal'}
               </span>
 
             </div>
