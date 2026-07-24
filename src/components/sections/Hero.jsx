@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Section from '../common/Section';
 import { Paragraph } from '../common/Typography';
 import { Button } from '../common/Button';
@@ -13,6 +14,7 @@ const scrollToSection = (id) => {
 
 const Hero = () => {
   const { personalInfo } = portfolioData;
+  const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <Section id="welcome" className="min-h-dvh flex items-center justify-center pt-24 sm:pt-32 relative overflow-hidden">
@@ -63,38 +65,80 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Columna Derecha: Tarjeta de Terminal Interactiva */}
-        <div className="lg:col-span-5 hidden lg:block">
-          <div className="card bg-transparent">
-            <div className="relative group select-none">
+        {/* Columna Derecha: Tarjeta de Terminal Interactiva Giratoria */}
+        <div className="lg:col-span-5 w-full flex justify-center mt-6 lg:mt-0">
+          <div className="card bg-transparent max-w-sm sm:max-w-md w-full">
+            <div className="flex flex-col items-center gap-3">
+              
+              {/* Contenedor 3D de la carta */}
+              <button 
+                type="button"
+                onClick={() => setIsFlipped(!isFlipped)}
+                className="w-full aspect-[4/3] sm:aspect-square lg:aspect-[4/3.2] perspective-1000 cursor-pointer group text-left bg-transparent border-0 p-0 focus:outline-none"
+              >
+                {/* Rotador de la carta */}
+                <div className={`relative w-full h-full duration-700 transform-style-3d transition-transform ${isFlipped ? 'rotate-y-180' : ''}`}>
+                  
+                  {/* Cara Frontal: Foto */}
+                  <div className="absolute inset-0 w-full h-full backface-hidden bg-slate-950/80 border border-slate-900 rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-4 sm:p-6 hover:shadow-[0_0_30px_rgba(16,185,129,0.25)] transition-shadow duration-500">
+                    {/* Encabezado */}
+                    <div className="h-9 bg-slate-900/60 border-b border-slate-900/80 px-4 flex items-center justify-between -mx-4 sm:-mx-6 -mt-4 sm:-mt-6">
+                      <span className="font-mono text-[10px] text-slate-400 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyber-emerald inline-block animate-pulse" /> perfil.png
+                      </span>
+                    </div>
 
-              {/* Ventana de Terminal */}
-              <div className="relative bg-slate-950/80 border border-slate-900 rounded-xl overflow-hidden shadow-2xl hover:shadow-[0_0_30px_rgba(139,92,246,0.25)] transition-shadow duration-500">
-                {/* Encabezado */}
-                <div className="h-9 bg-slate-900/60 border-b border-slate-900/80 px-4 flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-slate-400 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block" /> datos.json
-                  </span>
-                  <span className="w-10" />
-                </div>
+                    {/* Foto central */}
+                    <div className="flex-1 flex items-center justify-center p-2">
+                      <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full p-1 bg-gradient-to-tr from-cyber-violet to-cyber-emerald shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                        <img 
+                          src="https://github.com/ecujcuj-2024028.png" 
+                          alt="Edvin Leonel Cujcuj" 
+                          className="w-full h-full rounded-full object-cover bg-slate-900"
+                        />
+                      </div>
+                    </div>
 
-                {/* Contenido en formato de objeto de código */}
-                <div className="p-6 font-mono text-xs text-slate-300 space-y-2 overflow-x-auto leading-relaxed">
-                  <p className="text-slate-500">// Propiedades del Desarrollador</p>
-                  <p><span className="text-violet-400">const</span> <span className="text-sky-400">developer</span> = &#123;</p>
-                  <p className="pl-4"><span className="text-emerald-400">nombre</span>: <span className="text-yellow-200">"{personalInfo.firstName}"</span>,</p>
-                  <p className="pl-4"><span className="text-emerald-400">apellido</span>: <span className="text-yellow-200">"{personalInfo.lastName}"</span>,</p>
-                  <p className="pl-4"><span className="text-emerald-400">enfoque</span>: <span className="text-yellow-200">"Crear Software Revolucionario"</span>,</p>
-                  <p className="pl-4"><span className="text-emerald-400">experiencia</span>: <span className="text-yellow-200">"{personalInfo.yearsCoding}"</span>,</p>
-                  <p className="pl-4"><span className="text-emerald-400">estado</span>: <span className="text-yellow-200">"{personalInfo.status}"</span>,</p>
-                  <p className="pl-4"><span className="text-emerald-400">habilidades</span>: [</p>
-                  <p className="pl-8"><span className="text-yellow-200">"React.js"</span>, <span className="text-yellow-200">"TailwindCSS"</span>,</p>
-                  <p className="pl-8"><span className="text-yellow-200">"JavaScript"</span>, <span className="text-yellow-200">"C#"</span>,</p>
-                  <p className="pl-8"><span className="text-yellow-200">"Docker"</span>, <span className="text-yellow-200">"Java"</span></p>
-                  <p className="pl-4">]</p>
-                  <p>&#125;;</p>
+                    {/* Footer de la carta */}
+                    <div className="text-center font-mono text-[9px] text-slate-500 uppercase tracking-widest mt-2">
+                      Edvin Leonel // Desarrollador Full-Stack
+                    </div>
+                  </div>
+
+                  {/* Cara Trasera: Terminal */}
+                  <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-slate-950/80 border border-slate-900 rounded-xl overflow-hidden shadow-2xl flex flex-col hover:shadow-[0_0_30px_rgba(139,92,246,0.25)] transition-shadow duration-500">
+                    {/* Encabezado */}
+                    <div className="h-9 bg-slate-900/60 border-b border-slate-900/80 px-4 flex items-center justify-between">
+                      <span className="font-mono text-[10px] text-slate-400 flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block" /> datos.json
+                      </span>
+                    </div>
+
+                    {/* Contenido en formato de objeto de código */}
+                    <div className="p-4 sm:p-6 font-mono text-[10px] sm:text-xs text-slate-300 space-y-1.5 overflow-x-auto leading-relaxed flex-1 flex flex-col justify-center">
+                      <p className="text-slate-500">// Propiedades del Desarrollador</p>
+                      <p><span className="text-violet-400">const</span> <span className="text-sky-400">developer</span> = &#123;</p>
+                      <p className="pl-4"><span className="text-emerald-400">nombre</span>: <span className="text-yellow-200">"{personalInfo.firstName}"</span>,</p>
+                      <p className="pl-4"><span className="text-emerald-400">apellido</span>: <span className="text-yellow-200">"{personalInfo.lastName}"</span>,</p>
+                      <p className="pl-4"><span className="text-emerald-400">enfoque</span>: <span className="text-yellow-200">"Crear Software Revolucionario"</span>,</p>
+                      <p className="pl-4"><span className="text-emerald-400">experiencia</span>: <span className="text-yellow-200">"{personalInfo.yearsCoding}"</span>,</p>
+                      <p className="pl-4"><span className="text-emerald-400">estado</span>: <span className="text-yellow-200">"{personalInfo.status}"</span>,</p>
+                      <p className="pl-4"><span className="text-emerald-400">habilidades</span>: [</p>
+                      <p className="pl-8"><span className="text-yellow-200">"React.js"</span>, <span className="text-yellow-200">"TailwindCSS"</span>,</p>
+                      <p className="pl-8"><span className="text-yellow-200">"JavaScript"</span>, <span className="text-yellow-200">"C#"</span>,</p>
+                      <p className="pl-8"><span className="text-yellow-200">"Docker"</span>, <span className="text-yellow-200">"Java"</span></p>
+                      <p className="pl-4">]</p>
+                      <p>&#125;;</p>
+                    </div>
+                  </div>
+
                 </div>
-              </div>
+              </button>
+
+              {/* Indicador de acción (Clic para girar) */}
+              <span className="font-mono text-[9px] uppercase tracking-widest text-slate-500 animate-pulse mt-1 select-none">
+                💡 haz clic en la tarjeta para {isFlipped ? 'ver foto' : 'ver terminal'}
+              </span>
 
             </div>
           </div>
