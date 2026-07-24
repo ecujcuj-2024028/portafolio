@@ -70,7 +70,8 @@ export const portfolioData = {
         title: "Certificado en Power BI y Análisis de Datos",
         institution: "EcoCredGT",
         period: "2026",
-        description: "Curso sobre visualización de datos, creación de dashboards interactivos y análisis de grandes volúmenes de información utilizando Power BI."
+        description: "Curso sobre visualización de datos, creación de dashboards interactivos y análisis de grandes volúmenes de información utilizando Power BI.",
+        certificateUrl: "https://view.pok.tech/c/a7f32dbd-7e31-4402-b87e-8cf8f95ffe92"
       },
     ],
     experience: [
