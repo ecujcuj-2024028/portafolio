@@ -43,6 +43,11 @@ const Navbar = () => {
     };
 
     const observerCallback = (entries) => {
+      if (window.scrollY < 50) {
+        setActiveSection('welcome');
+        return;
+      }
+
       const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80;
       if (isAtBottom) {
         setActiveSection('contact');
