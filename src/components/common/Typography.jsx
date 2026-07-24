@@ -1,18 +1,18 @@
 import React from 'react';
 
-// Título principal con degradado y peso fuerte
-export const Title = ({ children, className = "", gradient = "primary" }) => {
-  const gradientClass = 
-    gradient === "primary" ? "text-gradient-primary" :
-    gradient === "emerald" ? "text-gradient-emerald" :
-    gradient === "violet" ? "text-gradient-violet" : "";
-
-  return (
-    <h1 className={`font-sans font-extrabold tracking-tight text-4xl sm:text-5xl md:text-6xl ${gradientClass} ${className}`}>
-      {children}
-    </h1>
-  );
-};
+// Título principal con degradado y peso fuerte (Comentado temporalmente por desuso tras rediseño retro de Hero)
+// export const Title = ({ children, className = "", gradient = "primary" }) => {
+//   const gradientClass = 
+//     gradient === "primary" ? "text-gradient-primary" :
+//     gradient === "emerald" ? "text-gradient-emerald" :
+//     gradient === "violet" ? "text-gradient-violet" : "";
+// 
+//   return (
+//     <h1 className={`font-sans font-extrabold tracking-tight text-4xl sm:text-5xl md:text-6xl ${gradientClass} ${className}`}>
+//       {children}
+//     </h1>
+//   );
+// };
 
 // Subtítulos
 export const Subtitle = ({ children, className = "" }) => {
