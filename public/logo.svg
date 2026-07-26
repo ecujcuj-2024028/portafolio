@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="logo-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <linearGradient id="logo-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+
+  <!-- Hexágono exterior estilizado -->
+  <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" stroke="url(#logo-grad-1)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  
+  <!-- Marco interior sutil -->
+  <polygon points="50,14 81,32 81,68 50,86 19,68 19,32" stroke="url(#logo-grad-2)" stroke-width="1.5" stroke-opacity="0.5" fill="none" />
+
+  <!-- Símbolo de código interactivo: Abrazadera izquierda '<' -->
+  <path d="M 37 36 L 25 50 L 37 64" stroke="#10B981" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Símbolo de código interactivo: Abrazadera derecha '>' -->
+  <path d="M 63 36 L 75 50 L 63 64" stroke="#8B5CF6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Slash central inclinado con degradado -->
+  <path d="M 54 34 L 46 66" stroke="url(#logo-grad-1)" stroke-width="4.5" stroke-linecap="round" />
+
+  <!-- Núcleo brillante central -->
+  <circle cx="50" cy="50" r="3.5" fill="#10B981" />
+</svg>
