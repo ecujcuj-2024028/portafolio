@@ -11,6 +11,7 @@ export const portfolioData = {
     status: "Disponible",
     email: "edvincuej9@gmail.com",
     phone: "+502 33381140",
+    whatsapp: "https://wa.me/50233381140",
     location: "Guatemala",
     profileImage: "/foto.jpeg",
     github: "https://github.com/ecujcuj-2024028",

@@ -3,12 +3,38 @@ import Section from '../common/Section';
 import { SectionHeader, Paragraph } from '../common/Typography';
 import { portfolioData } from '../../data/portfolioData';
 import { FileText, ExternalLink, Download } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from '../common/CustomIcons';
+import { GithubIcon, LinkedinIcon, WhatsappIcon, GmailIcon } from '../common/CustomIcons';
 
 const Contact = () => {
   const { personalInfo } = portfolioData;
 
   const contactLinks = [
+    {
+      id: 'whatsapp',
+      title: 'WhatsApp',
+      subtitle: 'Mensaje Directo',
+      description: 'Escríbeme directamente por WhatsApp para consultas rápidas o iniciar una conversación.',
+      url: personalInfo.whatsapp || 'https://wa.me/50233381140',
+      icon: WhatsappIcon,
+      actionText: 'Chat en WhatsApp',
+      badge: 'Mensajería',
+      borderColor: 'border-emerald-500/30 hover:border-emerald-400',
+      bgColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+      btnBg: 'bg-emerald-600/20 text-emerald-300 hover:bg-emerald-600 hover:text-white',
+    },
+    {
+      id: 'gmail',
+      title: 'Gmail',
+      subtitle: 'Correo Electrónico',
+      description: 'Envíame un correo directo a edvincuej9@gmail.com para propuestas laborales o colaboraciones.',
+      url: `mailto:${personalInfo.email}`,
+      icon: GmailIcon,
+      actionText: 'Enviar Correo',
+      badge: 'Correo Directo',
+      borderColor: 'border-rose-500/30 hover:border-rose-400',
+      bgColor: 'bg-rose-500/10 text-rose-400 border-rose-500/20',
+      btnBg: 'bg-rose-600/20 text-rose-300 hover:bg-rose-600 hover:text-white',
+    },
     {
       id: 'linkedin',
       title: 'LinkedIn',
@@ -66,12 +92,12 @@ const Contact = () => {
             ¿Quieres <span className="text-cyber-emerald">conectar</span> o conocer más sobre mí?
           </h3>
           <Paragraph className="text-slate-400 text-sm sm:text-base">
-            Puedes encontrarme de forma directa en mis redes profesionales principales o revisar mi Currículum Vitae.
+            Puedes encontrarme de forma directa en mis canales de contacto, redes profesionales o revisar mi Currículum Vitae.
           </Paragraph>
         </div>
 
-        {/* Tarjetas de LinkedIn, GitHub y CV */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        {/* Tarjetas de Contacto y Conexiones (Diseño de Triángulo Invertido: 3 arriba, 2 abajo centradas) */}
+        <div className="flex flex-wrap justify-center gap-6 pt-2">
           {contactLinks.map((item) => {
             const Icon = item.icon;
             return (
@@ -81,7 +107,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 download={item.download ? true : undefined}
-                className={`group relative flex flex-col justify-between p-6 bg-slate-950/60 border ${item.borderColor} rounded-2xl transition-all duration-300 shadow-xl hover:-translate-y-1`}
+                className={`group relative flex flex-col justify-between p-6 bg-slate-950/60 border ${item.borderColor} rounded-2xl transition-all duration-300 shadow-xl hover:-translate-y-1 w-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] max-w-sm`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
