@@ -1,7 +1,7 @@
 import Section from '../common/Section';
 import { SectionHeader, Subtitle, Paragraph } from '../common/Typography';
 import { portfolioData } from '../../data/portfolioData';
-import { Briefcase, GraduationCap, Calendar, ChevronRight } from 'lucide-react';
+import { Briefcase, GraduationCap, Calendar, ChevronRight, Download } from 'lucide-react';
 
 const Resume = () => {
   const { education, experience } = portfolioData.resume;
@@ -60,10 +60,12 @@ const Resume = () => {
                       href={item.certificateUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 mt-2 font-mono text-xs text-cyber-violet hover:text-cyber-emerald uppercase tracking-wider transition-colors duration-300 cursor-pointer"
+                      download={item.download ? "" : undefined}
+                      className="inline-flex items-center gap-1.5 mt-2 font-mono text-xs text-cyber-violet hover:text-cyber-emerald uppercase tracking-wider transition-colors duration-300 cursor-pointer"
                     >
-                      Ver Certificado
-                      <ChevronRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />
+                      {item.download ? <Download size={13} /> : null}
+                      <span>{item.download ? 'Descargar Certificado' : 'Ver Certificado'}</span>
+                      {!item.download && <ChevronRight size={12} className="transition-transform duration-300 group-hover:translate-x-0.5" />}
                     </a>
                   )}
                 </div>

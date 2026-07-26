@@ -67,7 +67,16 @@ export const portfolioData = {
         institution: "Centro Educativo Kinal",
         period: "2024 - Presente",
         description: "Enfoque en programación orientada a objetos, bases de datos, estructuras de datos y metodologías ágiles de desarrollo de software."
-      }, {
+      },
+      {
+        title: "Certificación Cisco IT Essentials",
+        institution: "Cisco Networking Academy",
+        period: "2024",
+        description: "Certificación en conceptos fundamentales de hardware y software de computadoras, ensamblaje, mantenimiento preventivo, redes y seguridad informática.",
+        certificateUrl: "/IT_Essentials_certificate_edvin_cujcuj.pdf",
+        download: true
+      },
+      {
         title: "Certificado en Power BI y Análisis de Datos",
         institution: "EcoCredGT",
         period: "2026",
