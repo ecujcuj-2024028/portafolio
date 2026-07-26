@@ -84,7 +84,7 @@ const Hero = () => {
                     {/* Encabezado */}
                     <div className="h-9 bg-slate-900/60 border-b border-slate-900/80 px-4 flex items-center justify-between -mx-4 sm:-mx-6 -mt-4 sm:-mt-6">
                       <span className="font-mono text-[10px] text-slate-400 flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyber-emerald inline-block animate-pulse" /> perfil.png
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyber-emerald inline-block animate-pulse" /> foto.jpeg
                       </span>
                     </div>
 
@@ -92,7 +92,7 @@ const Hero = () => {
                     <div className="flex-1 flex flex-col items-center justify-center p-2">
                       <div className="relative w-28 h-28 sm:w-36 sm:h-36 bg-slate-900 border-4 border-slate-950 rounded-full shadow-[4px_4px_0px_#07090e,8px_8px_0px_#fde047] group-hover:translate-x-[-2px] group-hover:translate-y-[-2px] group-hover:shadow-[6px_6px_0px_#07090e,12px_12px_0px_#fde047] transition duration-300 overflow-hidden">
                         <img 
-                          src="https://github.com/ecujcuj-2024028.png" 
+                          src={personalInfo.profileImage || "/foto.jpeg"} 
                           alt="Edvin Leonel Cujcuj" 
                           className="w-full h-full object-cover rounded-full bg-slate-900 contrast-[1.05]"
                         />

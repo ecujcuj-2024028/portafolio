@@ -12,6 +12,7 @@ export const portfolioData = {
     email: "edvincuej9@gmail.com",
     phone: "+502 33381140",
     location: "Guatemala",
+    profileImage: "/foto.jpeg",
     github: "https://github.com/ecujcuj-2024028",
     linkedin: "https://www.linkedin.com/in/edvin-leonel-cujcuj-ejcalón-42852241a/",
     cv: "/CV.pdf",
