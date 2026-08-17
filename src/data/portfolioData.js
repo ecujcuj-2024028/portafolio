@@ -156,6 +156,20 @@ export const portfolioData = {
         ui3: "",
         ui3Vertical: ""
       }
+    },{
+      id: "ciudad-activa",
+      title: "Ciudad Activa / Gestión Urbana",
+      description: "Sistema web para reportes ciudadanos y gestión operativa municipal. Permite geolocalizar incidencias, adjuntar evidencias y gestionar estados. Desarrollado con React, TypeScript, Node.js, Express y PostgreSQL + PostGIS para datos geoespaciales. Integra Docker, JWT para autenticación por roles, Cloudinary para imágenes y la API de Gemini (IA) para análisis asistido.",
+      skillsLearned: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL + PostGIS", "Docker", "JWT", "Cloudinary", "Gemini API (IA)"],
+      repoUrl: "https://github.com/smolina-2021528/GestionUrbana.git",
+      demoUrl: "https://ciudad-activa-proyect.netlify.app/login",
+      displayed: false,
+      images: {
+        ui1: "https://res.cloudinary.com/dscti2jte/image/upload/v1786982869/Captura_de_pantalla_2026-08-17_100744_d0aynt.png",
+        ui2: "https://res.cloudinary.com/dscti2jte/image/upload/v1786983576/Captura_de_pantalla_2026-08-17_101934_lkgf7b.png",
+        ui3: "",
+        ui3Vertical: ""
+      }
     }
   ]
 };

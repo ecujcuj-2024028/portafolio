@@ -116,57 +116,67 @@ const Projects = () => {
                 {/* Carrusel de Diapositivas */}
                 <div className="relative w-full border border-slate-900 bg-slate-950/20 rounded-xl p-4 md:p-6 flex flex-col items-center">
                   <div className="relative w-full flex items-center justify-center h-[280px] sm:h-[360px] md:h-[440px] overflow-hidden">
-                    {slides.map((slide, sIdx) => {
-                      const isActive = currentSlideIdx === sIdx;
-                      return (
-                        <div
-                          key={slide.id}
-                          className={`absolute inset-0 w-full h-full flex items-center justify-center transition-all duration-500 ease-in-out ${isActive ? 'opacity-100 scale-100 pointer-events-auto z-10' : 'opacity-0 scale-95 pointer-events-none z-0'}`}
-                        >
-                          {slide.type === 'web' ? (
-                            /* VISTA WEB */
-                            <button
-                              type="button"
-                              className="mockup-browser border border-slate-800 bg-slate-950/40 w-full cursor-zoom-in group transition-colors duration-300 hover:border-slate-700/80 text-left max-w-2xl"
-                              onClick={() => openPreview(slide.url)}
-                            >
-                              <div className="mockup-browser-toolbar">
-                                <div className="input border border-slate-800/80 bg-slate-900 text-slate-400 font-mono text-[10px] select-none">
-                                  {activeProject.demoUrl || "vista.local"}
-                                </div>
-                              </div>
-                              <div className="aspect-video relative overflow-hidden bg-slate-950 border-t border-slate-800">
-                                <img
-                                  src={slide.url}
-                                  alt={`${slide.label} de ${activeProject.title}`}
-                                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
-                                />
-                              </div>
-                            </button>
-                          ) : (
-                            /* VISTA MÓVIL */
-                            <div className="flex justify-center items-center py-2 h-full max-h-full">
+                    {slides.length === 0 ? (
+                      <div className="flex flex-col items-center justify-center text-center p-6 space-y-3">
+                        <div className="w-12 h-12 rounded-full bg-cyber-violet/10 border border-cyber-violet/30 flex items-center justify-center text-cyber-violet">
+                          <Sparkles size={22} className="animate-pulse" />
+                        </div>
+                        <span className="font-mono text-sm text-slate-300 font-medium">Capturas de pantalla próximamente</span>
+                        <span className="font-mono text-xs text-slate-500 max-w-sm">Próximamente se integrarán las capturas y vistas de la interfaz para este proyecto.</span>
+                      </div>
+                    ) : (
+                      slides.map((slide, sIdx) => {
+                        const isActive = currentSlideIdx === sIdx;
+                        return (
+                          <div
+                            key={slide.id}
+                            className={`absolute inset-0 w-full h-full flex items-center justify-center transition-all duration-500 ease-in-out ${isActive ? 'opacity-100 scale-100 pointer-events-auto z-10' : 'opacity-0 scale-95 pointer-events-none z-0'}`}
+                          >
+                            {slide.type === 'web' ? (
+                              /* VISTA WEB */
                               <button
                                 type="button"
-                                className="mockup-phone border-slate-900 shadow-2xl max-w-[200px] sm:max-w-[220px] w-full cursor-zoom-in group shrink-0 !rounded-3xl text-left bg-transparent p-0 border-0"
+                                className="mockup-browser border border-slate-800 bg-slate-950/40 w-full cursor-zoom-in group transition-colors duration-300 hover:border-slate-700/80 text-left max-w-2xl"
                                 onClick={() => openPreview(slide.url)}
                               >
-                                <div className="mockup-phone-camera"></div>
-                                <div className="mockup-phone-display bg-slate-950 !rounded-[20px]">
-                                  <div className="relative aspect-[9/19] w-full overflow-hidden">
-                                    <img
-                                      src={slide.url}
-                                      alt={`${slide.label} de ${activeProject.title}`}
-                                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
-                                    />
+                                <div className="mockup-browser-toolbar">
+                                  <div className="input border border-slate-800/80 bg-slate-900 text-slate-400 font-mono text-[10px] select-none">
+                                    {activeProject.demoUrl || "vista.local"}
                                   </div>
                                 </div>
+                                <div className="aspect-video relative overflow-hidden bg-slate-950 border-t border-slate-800">
+                                  <img
+                                    src={slide.url}
+                                    alt={`${slide.label} de ${activeProject.title}`}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
+                                  />
+                                </div>
                               </button>
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
+                            ) : (
+                              /* VISTA MÓVIL */
+                              <div className="flex justify-center items-center py-2 h-full max-h-full">
+                                <button
+                                  type="button"
+                                  className="mockup-phone border-slate-900 shadow-2xl max-w-[200px] sm:max-w-[220px] w-full cursor-zoom-in group shrink-0 !rounded-3xl text-left bg-transparent p-0 border-0"
+                                  onClick={() => openPreview(slide.url)}
+                                >
+                                  <div className="mockup-phone-camera"></div>
+                                  <div className="mockup-phone-display bg-slate-950 !rounded-[20px]">
+                                    <div className="relative aspect-[9/19] w-full overflow-hidden">
+                                      <img
+                                        src={slide.url}
+                                        alt={`${slide.label} de ${activeProject.title}`}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
+                                      />
+                                    </div>
+                                  </div>
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })
+                    )}
 
                     {/* Flechas de Navegación */}
                     {slides.length > 1 && (
