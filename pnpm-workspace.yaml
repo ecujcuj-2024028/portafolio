@@ -3,3 +3,6 @@ minimumReleaseAgeExclude:
   - 'lightningcss'
   - 'lightningcss-*'
 trustPolicy: no-downgrade
+overrides:
+  semver: ^7.6.3
+
